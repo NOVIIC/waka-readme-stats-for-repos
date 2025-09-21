@@ -53,7 +53,6 @@ class GitHubManager:
         GitHubManager._REPO_PATH = f"https://{EM.GH_TOKEN}@github.com/{GitHubManager._REMOTE_NAME}.git"
 
         GitHubManager.REMOTE = github.get_repo(GitHubManager._REMOTE_NAME)
-        print("cool")
         GitHubManager.REPO = Repo.clone_from(GitHubManager._REPO_PATH, to_path=clone_path)
 
         if EM.COMMIT_SINGLE:
