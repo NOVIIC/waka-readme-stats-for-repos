@@ -49,8 +49,8 @@ class GitHubManager:
         GitHubManager.USER = github.get_user()
         rmtree(clone_path, ignore_errors=True)
 
-        GitHubManager._REMOTE_NAME = f"{GitHubManager.USER.login}/{GitHubManager.USER.login}"
-        GitHubManager._REPO_PATH = f"https://{EM.GH_TOKEN}@github.com/{GitHubManager._REMOTE_NAME}.git"
+        GitHubManager._REMOTE_NAME = f"{GitHubManager.USER.login}/learning-from-scratch"
+        GitHubManager._REPO_PATH = f"https://{EM.GH_TOKEN}@github.com/learning-from-scratch.git"
 
         GitHubManager.REMOTE = github.get_repo(GitHubManager._REMOTE_NAME)
         GitHubManager.REPO = Repo.clone_from(GitHubManager._REPO_PATH, to_path=clone_path)
