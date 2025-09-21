@@ -32,7 +32,7 @@ async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
 
     data = await DM.get_remote_json("waka_latest")
     if data is None:
-        DBM.p("WakaTime data unavailable!")
+        DBM.p("WakaTime data unavailable!1")
         return stats
     if EM.SHOW_COMMIT or EM.SHOW_DAYS_OF_WEEK:  # if any on flag is turned on then we need to calculate the data and print accordingly
         DBM.i("Adding user commit day time info...")
@@ -169,7 +169,7 @@ async def get_stats() -> str:
         DBM.i("Adding total code time info...")
         data = await DM.get_remote_json("waka_all")
         if data is None:
-            DBM.p("WakaTime data unavailable!")
+            DBM.p("WakaTime data unavailable!2")
         else:
             stats += f"![Code Time](http://img.shields.io/badge/{quote('Code Time')}-{quote(str(data['data']['text']))}-blue)\n\n"
 
