@@ -50,9 +50,7 @@ class GitHubManager:
         rmtree(clone_path, ignore_errors=True)
 
         GitHubManager._REMOTE_NAME = str(getenv('GITHUB_REPOSITORY'))
-        print(GitHubManager._REMOTE_NAME)
         GitHubManager._REPO_PATH = f"https://{EM.GH_TOKEN}@github.com/{GitHubManager._REMOTE_NAME}.git"
-        print(GitHubManager._REPO_PATH)
 
         GitHubManager.REMOTE = github.get_repo(GitHubManager._REMOTE_NAME)
         print("cool")
