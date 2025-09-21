@@ -1,5 +1,5 @@
 from base64 import b64encode
-from os import environ, makedirs,getenv
+from os import environ, makedirs#,getenv
 from os.path import dirname, join
 from random import choice
 from re import sub
@@ -49,7 +49,7 @@ class GitHubManager:
         GitHubManager.USER = github.get_user()
         rmtree(clone_path, ignore_errors=True)
 
-        GitHubManager._REMOTE_NAME = str(getenv('GITHUB_REPOSITORY'))
+        GitHubManager._REMOTE_NAME = "NOVIIC/learning-from-scratch"#str(getenv('GITHUB_REPOSITORY'))
         GitHubManager._REPO_PATH = f"https://{EM.GH_TOKEN}@github.com/{GitHubManager._REMOTE_NAME}.git"
 
         GitHubManager.REMOTE = github.get_repo(GitHubManager._REMOTE_NAME)
